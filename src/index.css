@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NCA Brand Colors - Violet/Purple dominant with Orange accent */
+    --background: 0 0% 100%;
+    --foreground: 260 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 30% 15%;
+
+    /* Primary: Vibrant Purple */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Warm Orange */
+    --secondary: 24 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 10% 45%;
+
+    /* Accent: Yellow Gold */
+    --accent: 43 96% 56%;
+    --accent-foreground: 260 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 20% 90%;
+    --input: 260 20% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 1rem;
+
+    /* Custom NCA Colors */
+    --nca-purple: 262 83% 58%;
+    --nca-purple-dark: 262 80% 45%;
+    --nca-purple-light: 262 70% 75%;
+    --nca-orange: 24 95% 53%;
+    --nca-orange-light: 24 100% 65%;
+    --nca-yellow: 43 96% 56%;
+    --nca-coral: 10 85% 60%;
+    --nca-navy: 230 50% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 75% 50%) 50%, hsl(24 95% 53%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 75% 50%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(43 96% 56%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(10 85% 60%) 0%, hsl(24 95% 53%) 50%, hsl(43 96% 56%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(260 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(262 83% 58% / 0.15);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.25);
+    --shadow-orange: 0 4px 20px -2px hsl(24 95% 53% / 0.3);
+    --shadow-elevated: 0 20px 50px -10px hsl(260 30% 15% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 260 20% 96%;
+    --sidebar-accent-foreground: 260 30% 15%;
+    --sidebar-border: 260 20% 90%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 260 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 25% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 95% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 20% 18%;
+    --muted-foreground: 260 15% 65%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 260 30% 10%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 20% 20%;
+    --input: 260 20% 20%;
+    --ring: 262 83% 65%;
+
+    --sidebar-background: 260 30% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 262 83% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 20% 18%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 260 20% 20%;
+    --sidebar-ring: 262 83% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .gradient-hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-purple-bg {
+    background: var(--gradient-purple);
+  }
+
+  .gradient-orange-bg {
+    background: var(--gradient-orange);
+  }
+
+  .gradient-warm-bg {
+    background: var(--gradient-warm);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .elevated-card {
+    @apply bg-card rounded-2xl;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-orange {
+    box-shadow: var(--shadow-orange);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .pb-6{
+    padding-bottom: 6.5rem;
+  }
+}
