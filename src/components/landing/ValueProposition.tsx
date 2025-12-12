@@ -48,7 +48,7 @@ const itemVariants = {
 
 export function ValueProposition() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-23 bg-background relative overflow-hidden bb-0">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-nca-purple/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-nca-orange/5 rounded-full blur-3xl" />

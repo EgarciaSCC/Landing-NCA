@@ -225,6 +225,20 @@
     }
   }
 
+  .background-menu-mobile{
+      background-color: #10091a9c;
+      border-color: #2c183c;
+      box-shadow: 0px 5px 7px 1px #49176733;
+  }
+
+  .text-color-menu-mobile{
+        color: #ffffff;
+  }
+
+  .bb-0{
+    border-bottom: 0rem;
+  }
+
   .pb-6{
     padding-bottom: 6.5rem;
   }

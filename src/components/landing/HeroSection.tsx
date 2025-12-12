@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center bb-0 overflow-hidden pt-20"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-purple-bg opacity-95" />

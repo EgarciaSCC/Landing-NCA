@@ -38,8 +38,8 @@ export function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 ${
         isScrolled
-          ? "bg-background/70 backdrop-blur-lg shadow-lg bg-transparent py-5"
-          : "bg-transparent py-5"
+          ? "bg-background/80 backdrop-blur-lg shadow-lg bg-transparent py-5"
+          : "bg-background/70 bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -97,7 +97,7 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-background/90 bg-transparent py-5 border-b border-border shadow-lg"
+            className="md:hidden absolute top-full left-0 right-0 bg-background/70 background-menu-mobile bg-transparent py-5 border-b border-border shadow-lg"
           >
             <div className="container py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -105,7 +105,7 @@ export function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-medium text-lg py-2 text-muted-foreground hover:text-primary transition-colors"
+                  className="font-medium text-color-menu-mobile text-lg py-2 text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
