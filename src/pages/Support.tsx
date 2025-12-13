@@ -23,7 +23,7 @@ const helpCategories = [
   {
     icon: BookOpen,
     title: "Guías de Inicio",
-    description: "Aprende a configurar y usar NCA desde cero.",
+    description: "Aprende a configurar y usar NCA desde cero",
     articles: 12
   },
   {

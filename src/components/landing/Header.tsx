@@ -80,7 +80,7 @@ export function Header() {
                 className={`font-medium transition-colors duration-200 ${
                   isScrolled
                     ? "text-muted-foreground hover:text-primary"
-                    : `${textHeader} `
+                    : `${textHeader}`
                 }`}
               >
                 {link.name}
