@@ -1,30 +1,47 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
-import { 
-  HelpCircle, 
-  FileText, 
-  Mail, 
-  Activity, 
+import { Link, useNavigate } from "react-router-dom";
+import {
+  HelpCircle,
+  FileText,
+  Mail,
+  Activity,
   Search,
   BookOpen,
   MessageCircle,
   Phone,
   CheckCircle,
   AlertTriangle,
-  XCircle
+  XCircle,
+  ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useState } from "react";
+
+const guideArticles = [
+  {
+    title: "Configuración del Módulo Administrativo",
+    description: "Aprende a configurar colegios, sedes, programas y estructura académica",
+    href: "/support/guia-modulo-administrativo"
+  }
+];
 
 const helpCategories = [
   {
     icon: BookOpen,
     title: "Guías de Inicio",
     description: "Aprende a configurar y usar NCA desde cero",
-    articles: 12
+    articles: 1
   },
   {
     icon: HelpCircle,
@@ -89,11 +106,19 @@ const getStatusText = (status: string) => {
 
 const Support = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isGuidesModalOpen, setIsGuidesModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoryTitle: string) => {
+    if (categoryTitle === "Guías de Inicio") {
+      setIsGuidesModalOpen(true);
+    }
+  };
 
   return (
-    <div role="support" className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
-      
+
       <main className="pt-24">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
@@ -113,7 +138,7 @@ const Support = () => {
             >
               Encuentra respuestas, accede a documentación y obtén la ayuda que necesitas
             </motion.p>
-            
+
             {/* Search Bar */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -146,7 +171,7 @@ const Support = () => {
               <p className="text-muted-foreground">Explora nuestras categorías de ayuda</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {helpCategories.map((category, index) => (
                 <motion.div
                   key={category.title}
@@ -154,6 +179,7 @@ const Support = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  onClick={() => handleCategoryClick(category.title)}
                 >
                   <Card className="h-full hover:shadow-lg transition-all cursor-pointer group border-border/50 hover:border-primary/30">
                     <CardHeader className="text-center">
@@ -170,6 +196,51 @@ const Support = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Guides Modal */}
+            <Dialog open={isGuidesModalOpen} onOpenChange={setIsGuidesModalOpen}>
+              <DialogContent className="sm:max-w-lg bg-background">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    Guías de Inicio
+                  </DialogTitle>
+                  <DialogDescription>
+                    Explora nuestras guías para comenzar a usar NCA
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-3 mt-4">
+                  {guideArticles.map((article, index) => (
+                    <div
+                      key={article.title}
+                      className="flex items-center justify-between p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-muted/30 transition-all"
+                    >
+                      <div className="flex items-center gap-3 flex-1">
+                        <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold text-sm">
+                          {index + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium text-foreground">{article.title}</h4>
+                          <p className="text-sm text-muted-foreground">{article.description}</p>
+                        </div>
+                      </div>
+                      <Button
+                        size="sm"
+                        onClick={() => {
+                          setIsGuidesModalOpen(false);
+                          navigate(article.href);
+                        }}
+                        className="gap-1"
+                      >
+                        Ver artículo
+                        <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
+
           </div>
         </section>
 
@@ -211,6 +282,7 @@ const Support = () => {
             </div>
           </div>
         </section>
+
 
         {/* Contact Section */}
         <section className="py-16">

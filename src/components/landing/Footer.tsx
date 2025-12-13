@@ -17,10 +17,10 @@ const footerLinks = {
     { name: "Blog", href: "#contact" },
   ],
   soporte: [
-    { name: "Centro de ayuda", href: "#contact" },
-    { name: "Documentación", href: "#contact" },
-    { name: "Contacto", href: "#contact" },
-    { name: "Estado del sistema", href: "#contact" },
+    { name: "Centro de ayuda", href: "/support" },
+    { name: "Documentación", href: "/support" },
+    { name: "Contacto", href: "/support" },
+    { name: "Estado del sistema", href: "/support" },
   ],
   legal: [
     { name: "Privacidad", href: "#contact" },
