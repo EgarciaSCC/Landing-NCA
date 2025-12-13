@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   GraduationCap,
@@ -14,6 +15,7 @@ import containerPagos from "@/assets/container-pagos.png";
 import containerRutas from "@/assets/container-rutas.png";
 import containerComboCard from "@/assets/container-combocard.png";
 import containerBoardV from "@/assets/container-boardv.png";
+import { ModuleDetailModal } from "./ModuleDetailModal";
 
 const modules = [
   {
@@ -48,6 +50,7 @@ const modules = [
       "Conciliación contable automática",
       "Integración DIAN y SAT",
       "Reportes financieros detallados",
+      "Crea conceptos de pago personalizados",
     ],
     color: "from-nca-orange to-nca-coral",
     bgColor: "bg-nca-orange/5",
@@ -63,7 +66,7 @@ const modules = [
     features: [
       "Geolocalización en vivo",
       "Notificaciones de paradas",
-      "Alertas de retrasos",
+      "Alertas de retrasos y novedades",
       "App para conductor y acompañante",
       "Historial de recorridos",
     ],
@@ -109,6 +112,7 @@ const modules = [
 ];
 
 export function ModulesSection() {
+  const [selectedModule, setSelectedModule] = useState<typeof modules[0] | null>(null);
   return (
     <section id="modules" className="py-24 bg-muted/30 relative overflow-hidden">
       {/* Background decoration */}
@@ -196,7 +200,11 @@ export function ModulesSection() {
                       ))}
                     </ul>
 
-                    <Button variant="outline" className="self-start group">
+                    <Button
+                    variant="outline"
+                    className="self-start group"
+                    onClick={() => setSelectedModule(module)}
+                    >
                       Conocer más
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Button>
@@ -227,6 +235,12 @@ export function ModulesSection() {
             </motion.div>
           ))}
         </div>
+        {/* Module Detail Modal */}
+        <ModuleDetailModal
+            module={selectedModule}
+            isOpen={!!selectedModule}
+            onClose={() => setSelectedModule(null)}
+        />
       </div>
     </section>
   );

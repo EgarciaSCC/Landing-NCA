@@ -5,10 +5,11 @@ import { Menu, X } from "lucide-react";
 import LogoNCA from "@/assets/Logo-NCA.png";
 
 const navLinks = [
-  { name: "Inicio", href: "#hero" },
-  { name: "Módulos", href: "#modules" },
-  { name: "Beneficios", href: "#benefits" },
-  { name: "Contacto", href: "#contact" },
+  { name: "Inicio", href: "/#hero" },
+  { name: "Módulos", href: "/#modules" },
+  { name: "Beneficios", href: "/#benefits" },
+  { name: "Contacto", href: "/#contact" },
+  { name: "Soporte", href: "/soporte", isAnchor: false }
 ];
 
 export function Header() {
@@ -40,12 +41,18 @@ export function Header() {
         isScrolled
           ? "bg-background/80 backdrop-blur-lg shadow-lg bg-transparent py-5"
           : "bg-background/70 bg-transparent py-5"
-      }`}
+      }
+      ${
+          isScrolled
+            ? "bg-background/80 backdrop-blur-lg shadow-lg bg-transparent py-5"
+            : "bg-background/70 bg-transparent py-5"
+        }`}
+
     >
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <div className="relative w-50 h-10 flex items-center justify-center">
               <img
                 src={LogoNCA}

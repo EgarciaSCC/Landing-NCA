@@ -242,4 +242,35 @@
   .pb-6{
     padding-bottom: 6.5rem;
   }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #a020de5c;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #6e1bf3ad;
+    border-radius: 20px;
+    border: 3px solid #ddaff3;
+  }
+
+  @media [role="dialog"]:rounded-lg {
+      border-radius: 7px;
+  }
+  [role="dialog"]::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  [role="dialog"]::-webkit-scrollbar-track {
+    background: #a020de5c;
+  }
+
+  [role="dialog"]::-webkit-scrollbar-thumb {
+    background-color: #6e1bf3ad;
+    border-radius: 20px;
+    border: 2px solid #ddaff3;
+  }
 }
