@@ -33,7 +33,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Función para hacer scroll suave a la sección #contact
+  // Funcion para hacer scroll suave a la sección #contact
   const scrollToContact = () => {
     const el = document.getElementById("contact");
     if (el) {
