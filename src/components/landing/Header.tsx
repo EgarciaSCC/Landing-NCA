@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Módulos", href: "/#modules" },
   { name: "Beneficios", href: "/#benefits" },
   { name: "Contacto", href: "/#contact" },
-  { name: "Soporte", href: "/soporte", isAnchor: false }
+  { name: "Soporte", href: "/support" }
 ];
 
 
@@ -21,7 +21,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const textHeader =
-  location.pathname === '/soporte'
+  location.pathname === '/support'
   ? "text-muted-foreground text-header"
   : "text-white/80 text-header";
 
