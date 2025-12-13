@@ -1,4 +1,3 @@
-{/*configuracion sugerida para gestionar redireccionamiento a otras paginas en vercel*/}
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
