@@ -231,6 +231,11 @@
       box-shadow: 0px 5px 7px 1px #49176733;
   }
 
+  .text-header:hover{
+    color:#fbbd23;
+  }
+
+
   .text-color-menu-mobile{
         color: #ffffff;
   }

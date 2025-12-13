@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import LogoNCA from "@/assets/Logo-NCA.png";
+import { useLocation } from 'react-router-dom';
 
 const navLinks = [
   { name: "Inicio", href: "/#hero" },
@@ -12,9 +13,17 @@ const navLinks = [
   { name: "Soporte", href: "/soporte", isAnchor: false }
 ];
 
+
 export function Header() {
+
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const textHeader =
+  location.pathname === '/soporte'
+  ? "text-muted-foreground text-header"
+  : "text-white/80 text-header";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +46,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0  right-0 z-50 transition-all duration-300 py-3 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 ${
         isScrolled
           ? "bg-background/80 backdrop-blur-lg shadow-lg bg-transparent py-5"
           : "bg-background/70 bg-transparent py-5"
@@ -71,7 +80,7 @@ export function Header() {
                 className={`font-medium transition-colors duration-200 ${
                   isScrolled
                     ? "text-muted-foreground hover:text-primary"
-                    : "text-white/80 hover:text-white"
+                    : `${textHeader} `
                 }`}
               >
                 {link.name}

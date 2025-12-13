@@ -91,7 +91,7 @@ const Support = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div role="support" className="min-h-screen bg-background overflow-x-hidden">
       <Header />
       
       <main className="pt-24">
