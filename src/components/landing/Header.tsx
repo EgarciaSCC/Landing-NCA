@@ -37,7 +37,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 ${
+      className={`fixed top-0 left-0  right-0 z-50 transition-all duration-300 py-3 ${
         isScrolled
           ? "bg-background/80 backdrop-blur-lg shadow-lg bg-transparent py-5"
           : "bg-background/70 bg-transparent py-5"
