@@ -31,8 +31,96 @@ import { useState } from "react";
 const guideArticles = [
   {
     title: "Configuración del Módulo Administrativo",
-    description: "Aprende a configurar colegios, sedes, programas y estructura académica",
+    description: "Aprende a configurar colegios, sedes, programas y certificaciones",
     href: "/support/guia-modulo-administrativo"
+  },
+  {
+   title: "Creación de Estructura Académica",
+   description: "Configura niveles, grados, capacidades y valores académicos",
+   href: "/soporte/guia-estructura-academica"
+  }
+];
+
+const faqItems = [
+  {
+    question: "¿Cómo puedo consultar las sedes que están sin estructura académica?",
+    answer: "Al acceder a la vista de lista de colegios con un usuario admin, puedes visualizar la lista de colegios y dentro de ellos sus sedes. Si la sede tiene el icono de warning activo, quiere decir que no tiene una estructura académica creada o le falta diligenciar información."
+  },
+  {
+    question: "¿Cómo creo un nuevo colegio en la plataforma?",
+    answer: "Desde el módulo administrativo, accede a la sección 'Colegios' y haz clic en 'Agregar Colegio'. Completa los datos requeridos como nombre, NIT, dirección y datos de contacto, luego guarda los cambios."
+  },
+  {
+    question: "¿Cómo agrego una nueva sede a un colegio existente?",
+    answer: "Ingresa al colegio desde la lista de colegios, ve a la pestaña 'Sedes' y selecciona 'Agregar Sede'. Ingresa el nombre, dirección y teléfono de la sede, y confirma la creación."
+  },
+  {
+    question: "¿Cómo configuro los niveles académicos de una sede?",
+    answer: "Accede a la sede desde el módulo administrativo, ve a 'Estructura Académica' y selecciona 'Agregar Nivel'. Puedes crear niveles como Preescolar, Primaria, Secundaria, etc."
+  },
+  {
+    question: "¿Cómo creo grados dentro de un nivel académico?",
+    answer: "Dentro de la vista del nivel académico, haz clic en 'Agregar Grado'. Asigna un nombre al grado (ej: Primero, Segundo), define la capacidad máxima de estudiantes y el valor de la matrícula."
+  },
+  {
+    question: "¿Cómo modifico el cupo o capacidad de un grado?",
+    answer: "En la estructura académica de la sede, selecciona el grado que deseas modificar, haz clic en 'Editar' y actualiza el campo de capacidad máxima con el nuevo valor."
+  },
+  {
+    question: "¿Cómo configuro el valor de matrícula para cada grado?",
+    answer: "Al crear o editar un grado, encontrarás el campo 'Valor del Grado' donde puedes ingresar el costo de la matrícula. Este valor se utilizará para la gestión de pagos."
+  },
+  {
+    question: "¿Cómo matriculo un estudiante en un grado específico?",
+    answer: "Ve al módulo de matrículas, selecciona 'Nueva Matrícula', busca o crea el estudiante, selecciona la sede, nivel y grado correspondiente, y completa el proceso de inscripción."
+  },
+  {
+    question: "¿Cómo consulto los estudiantes matriculados en un grado?",
+    answer: "Desde el módulo académico, selecciona la sede y el grado. Verás la lista completa de estudiantes matriculados con su información básica y estado de matrícula."
+  },
+  {
+    question: "¿Cómo genero un reporte de estudiantes por sede?",
+    answer: "Accede al módulo de reportes, selecciona 'Reportes Académicos', elige la sede y el tipo de reporte que necesitas. Puedes exportar en PDF o Excel."
+  },
+  {
+    question: "¿Cómo registro un pago de matrícula?",
+    answer: "En el módulo de pagos, busca al estudiante, selecciona 'Registrar Pago', elige el concepto (matrícula, pensión, etc.), ingresa el monto y el método de pago."
+  },
+  {
+    question: "¿Cómo consulto el estado de pagos de un estudiante?",
+    answer: "Busca al estudiante en el sistema, accede a su perfil y ve a la pestaña 'Financiero'. Allí verás el historial de pagos, saldos pendientes y estado general."
+  },
+  {
+    question: "¿Cómo asigno docentes a un grado?",
+    answer: "En el módulo de gestión académica, selecciona el grado, ve a 'Asignación de Docentes' y selecciona los profesores que dictarán clases en ese grado."
+  },
+  {
+    question: "¿Cómo creo el horario de clases para un grado?",
+    answer: "Accede al módulo de horarios, selecciona la sede y el grado, utiliza la interfaz de calendario para asignar materias, docentes y franjas horarias."
+  },
+  {
+    question: "¿Cómo registro calificaciones de los estudiantes?",
+    answer: "En el módulo académico, selecciona el grado y la materia, haz clic en 'Ingreso de Notas', selecciona el período y registra las calificaciones de cada estudiante."
+  },
+  {
+    question: "¿Cómo genero boletines de calificaciones?",
+    answer: "Ve a reportes académicos, selecciona 'Boletines', elige el período, grado y estudiantes. Puedes generar boletines individuales o masivos en formato PDF."
+  },
+  {
+    question: "¿Cómo registro la asistencia de los estudiantes?",
+    answer: "En el módulo de asistencia, selecciona la fecha, el grado y marca la asistencia, inasistencia o tardanza de cada estudiante. Puedes agregar observaciones."
+  },
+  {
+    question: "¿Cómo consulto el historial de asistencia de un estudiante?",
+    answer: "Busca al estudiante, accede a su perfil y ve a la pestaña 'Asistencia'. Verás el resumen por período y el detalle de cada día con sus observaciones."
+  },
+  {
+    question: "¿Cómo configuro los períodos académicos del año?",
+    answer: "En configuración académica, accede a 'Períodos', haz clic en 'Nuevo Período', define las fechas de inicio y fin, y el peso porcentual de cada período."
+  },
+  {
+    question: "¿Cómo cambio de año escolar y promuevo estudiantes?",
+    answer: "Al final del año, ve a 'Gestión de Promoción', selecciona el grado, revisa los estudiantes aprobados y usa la opción de promoción masiva para pasarlos al siguiente grado."
   }
 ];
 
@@ -41,13 +129,13 @@ const helpCategories = [
     icon: BookOpen,
     title: "Guías de Inicio",
     description: "Aprende a configurar y usar NCA desde cero",
-    articles: 1
+    articles: 2
   },
   {
     icon: HelpCircle,
     title: "Preguntas Frecuentes",
     description: "Respuestas a las dudas más comunes",
-    articles: 28
+    articles: 20
   },
   {
     icon: FileText,
@@ -107,12 +195,17 @@ const getStatusText = (status: string) => {
 const Support = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isGuidesModalOpen, setIsGuidesModalOpen] = useState(false);
+  const [isFaqModalOpen, setIsFaqModalOpen] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const handleCategoryClick = (categoryTitle: string) => {
     if (categoryTitle === "Guías de Inicio") {
       setIsGuidesModalOpen(true);
-    }
+      } else if (categoryTitle === "Preguntas Frecuentes") {
+          setIsFaqModalOpen(true);
+          setExpandedFaq(null);
+      }
   };
 
   return (
@@ -235,6 +328,49 @@ const Support = () => {
                         Ver artículo
                         <ArrowRight className="w-4 h-4" />
                       </Button>
+                    </div>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* FAQ Modal */}
+            <Dialog open={isFaqModalOpen} onOpenChange={setIsFaqModalOpen}>
+              <DialogContent className="sm:max-w-2xl bg-background max-h-[80vh] overflow-hidden flex flex-col">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center gap-2">
+                    <HelpCircle className="w-5 h-5 text-primary" />
+                    Preguntas Frecuentes
+                  </DialogTitle>
+                  <DialogDescription>
+                    Encuentra respuestas a las dudas más comunes sobre la gestión académica
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-2 mt-4 overflow-y-auto pr-2 flex-1">
+                  {faqItems.map((faq, index) => (
+                    <div
+                      key={index}
+                      className="rounded-lg border border-border/50 hover:border-primary/30 transition-all overflow-hidden"
+                    >
+                      <button
+                        onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                        className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
+                      >
+                        <div className="flex items-center gap-3 flex-1">
+                          <div className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xs shrink-0">
+                            {index + 1}
+                          </div>
+                          <span className="font-medium text-foreground text-sm">{faq.question}</span>
+                        </div>
+                        <ArrowRight className={`w-4 h-4 text-muted-foreground transition-transform shrink-0 ml-2 ${expandedFaq === index ? 'rotate-90' : ''}`} />
+                      </button>
+                      {expandedFaq === index && (
+                        <div className="px-4 pb-4 pt-0">
+                          <div className="pl-10 text-sm text-muted-foreground bg-muted/20 p-3 rounded-lg">
+                            {faq.answer}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
