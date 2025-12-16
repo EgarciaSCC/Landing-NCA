@@ -176,7 +176,7 @@ const TutorialsPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="mb-8"
           >
-            <Link to="/soporte">
+            <Link to="/support">
               <Button variant="ghost" className="gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 Volver a Soporte

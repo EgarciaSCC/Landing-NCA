@@ -37,7 +37,7 @@ const guideArticles = [
   {
    title: "Creación de Estructura Académica",
    description: "Configura niveles, grados, capacidades y valores académicos",
-   href: "/soporte/guia-estructura-academica"
+   href: "/Support/guia-estructura-academica"
   }
 ];
 
