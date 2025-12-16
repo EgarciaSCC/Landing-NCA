@@ -13,7 +13,7 @@ const AcademicStructureGuidePage = () => {
       <main className="pt-24">
         {/* Breadcrumb */}
         <div className="container mx-auto px-4 py-6">
-          <Link to="/soporte">
+          <Link to="/support">
             <Button variant="ghost" className="gap-2 text-muted-foreground hover:text-foreground">
               <ArrowLeft className="w-4 h-4" />
               Volver a Soporte

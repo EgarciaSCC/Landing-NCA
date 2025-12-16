@@ -141,7 +141,7 @@ const helpCategories = [
     icon: FileText,
     title: "Tutoriales",
     description: "Videos y guías paso a paso",
-    articles: 15
+    articles: 12
   },
   {
     icon: MessageCircle,
@@ -205,6 +205,8 @@ const Support = () => {
       } else if (categoryTitle === "Preguntas Frecuentes") {
           setIsFaqModalOpen(true);
           setExpandedFaq(null);
+      } else if (categoryTitle === "Tutoriales") {
+          navigate("/Support/tutoriales");
       }
   };
 
