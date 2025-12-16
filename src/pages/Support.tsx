@@ -35,10 +35,15 @@ const guideArticles = [
     href: "/support/guia-modulo-administrativo"
   },
   {
-   title: "Creación de Estructura Académica",
-   description: "Configura niveles, grados, capacidades y valores académicos",
-   href: "/Support/guia-estructura-academica"
-  }
+    title: "Creación de Estructura Académica",
+    description: "Configura niveles, grados, capacidades y valores académicos",
+    href: "/Support/guia-estructura-academica"
+  },
+  {
+    title: "Creación de Formularios Dinámicos",
+    description: "Diseña formularios personalizados para admisiones, pagos y más",
+    href: "/soporte/guia-formularios-dinamicos"
+  },
 ];
 
 const faqItems = [
@@ -129,7 +134,7 @@ const helpCategories = [
     icon: BookOpen,
     title: "Guías de Inicio",
     description: "Aprende a configurar y usar NCA desde cero",
-    articles: 2
+    articles: 3
   },
   {
     icon: HelpCircle,

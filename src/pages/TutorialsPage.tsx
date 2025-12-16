@@ -313,7 +313,7 @@ const TutorialsPage = () => {
             <p className="text-muted-foreground mb-4">
               Contáctanos y con gusto crearemos un tutorial personalizado para tu necesidad
             </p>
-            <Link to="/soporte">
+            <Link to="/Support">
               <Button variant="outline" className="gap-2">
                 Contactar Soporte
               </Button>

@@ -8,6 +8,7 @@ import Support from "./pages/Support";
 import AdminModuleGuidePage from "./pages/AdminModuleGuidePage";
 import AcademicStructureGuidePage from "./pages/AcademicStructureGuidePage";
 import TutorialsPage from "./pages/TutorialsPage";
+import DynamicFormsGuidePage from "./pages/DynamicFormsGuidePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/support" element={<Support />} />
           <Route path="/support/guia-modulo-administrativo" element={<AdminModuleGuidePage />} />
           <Route path="/support/guia-estructura-academica" element={<AcademicStructureGuidePage />} />
+          <Route path="/soporte/guia-formularios-dinamicos" element={<DynamicFormsGuidePage />} />
           <Route path="/support/tutoriales" element={<TutorialsPage />} />
           {/* agregar aqui todas las rutas personalizadas */}
           <Route path="*" element={<NotFound />} />
