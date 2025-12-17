@@ -18,6 +18,8 @@ const contactInfo = [
     label: "Teléfono / WhatsApp",
     value: "+52 55 1234 5678",
     href: "https://wa.me/message/66GJF5IXUK7XP1",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     icon: MapPin,
@@ -162,6 +164,8 @@ export function ContactSection() {
                 <motion.a
                   key={info.label}
                   href={info.href}
+                  target={info.target}
+                  rel={info.rel}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
