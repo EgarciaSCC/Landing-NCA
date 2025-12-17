@@ -15,9 +15,9 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: "Teléfono",
-    value: "+57 301 291 6999",
-    href: "tel:+57 301 291 6999",
+    label: "Teléfono / WhatsApp",
+    value: "+52 55 1234 5678",
+    href: "https://wa.me/message/66GJF5IXUK7XP1",
   },
   {
     icon: MapPin,
